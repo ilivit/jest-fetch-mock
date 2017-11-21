@@ -24,5 +24,8 @@
   "homepage": "https://github.com/jefflau/jest-fetch-mock#readme",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/jest": "*"
   }
 }
