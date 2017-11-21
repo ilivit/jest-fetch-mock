@@ -1,6 +1,6 @@
 # Jest Fetch Mock
 
-Fetch is the new way to do HTTP requests in the browser, and it can be used in other environments such as React Native. Jest Fetch Mock allows you to easily mock your `fetch` calls and return the response you need to fake the HTTP requests. It's easy to setup and you don't need a library like `nock` to get going and it uses Jest's built-in support for mocking under the surface. It currently supports the mocking of the go-to polyfill for fetch, [`whatwg-fetch`](https://github.com/github/fetch)
+Fetch is the new way to do HTTP requests in the browser, and it can be used in other environments such as React Native. Jest Fetch Mock allows you to easily mock your `fetch` calls and return the response you need to fake the HTTP requests. It's easy to setup and you don't need a library like `nock` to get going and it uses Jest's built-in support for mocking under the surface. It currently supports the mocking of the go-to isomorphic polyfill for fetch, [`isomorphic-fetch`](https://github.com/matthew-andrews/isomorphic-fetch), so it supports Node.js and any browser-like runtime.
 
 ## Setup and Installation
 
@@ -34,6 +34,8 @@ Add the setupFile to your jest config in package.json:
 * `fetch.mockResponseOnce(body, init)` - Mock each fetch call independently
 * `fetch.mockResponses(...responses)` - Mock multiple fetch calls independently
   * Each argument is an array taking `[body, init]`
+* `fetch.mockReject()` - Mock all fetch calls, letting them fail directly
+* `fetch.mockRejectOnce()` - Let the next fetch call fail directly
 * `fetch.resetMocks()` - Clear previously set mocks so they do not bleed into other mocks
 
 For information on the parameters body and init take, you can look at the MDN docs on the Response Constructor function, which `jest-fetch-mock` uses under the surface.
